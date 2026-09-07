@@ -1,16 +1,16 @@
 {
-  "timestamp": "2026-09-07T14:20:20.155940Z",
+  "timestamp": "2026-09-07T18:49:08.010757Z",
   "system_state": "seasonal_transition_state",
   "scores": {
-    "L0": 0.3173,
-    "L2": 0.5454,
-    "L3": 0.2814,
-    "L5": 0.2612,
-    "L6": 0.2962
+    "L0": 0.3357,
+    "L2": 0.5779,
+    "L3": 0.328,
+    "L5": 0.3077,
+    "L6": 0.3039
   },
   "macro_context": {
     "band": "high",
-    "score": 0.5454,
+    "score": 0.5779,
     "tags": []
   },
   "meso_organisation": {
@@ -18,37 +18,37 @@
     "note": "no meso-scale layer instrumented (regional convection / MCS)"
   },
   "micro_activation": {
-    "band": "medium",
-    "score": 0.2814,
+    "band": "high",
+    "score": 0.328,
     "thunder_pts": 0,
-    "storms_EONET": 6
+    "storms_EONET": 0
   },
   "field_response": {
     "electric": {
-      "band": "low",
-      "score": 0.2612
+      "band": "medium",
+      "score": 0.3077
     },
     "resonance": {
-      "band": "low",
-      "score": 0.2962,
+      "band": "medium",
+      "score": 0.3039,
       "confirmation": "low_proxy_limited"
     }
   },
   "chain_break": {
-    "break_at": "micro_to_electric",
+    "break_at": "none",
     "localizable": true,
-    "reason": "atmosphere active but GEC not responding"
+    "reason": "chain propagated to resonance"
   },
   "external_forcing_mask": {
-    "external_score": 0.317,
+    "external_score": 0.336,
     "externally_driven": true,
     "interpretation": "external forcing non-trivial -> check L0 contribution"
   },
   "validation_status": {
     "status": "validated_by_L9",
-    "validation_score": 0.9286,
+    "validation_score": 1.0,
     "evidence_level": "exploratory_signal",
-    "checks": "6/8 passed",
-    "l9_timestamp": "2026-09-07T14:20:29.596363Z"
+    "checks": "6/7 passed",
+    "l9_timestamp": "2026-09-07T18:49:16.463723Z"
   }
 }
