@@ -1,16 +1,16 @@
 {
-  "timestamp": "2026-09-07T18:49:08.010757Z",
+  "timestamp": "2026-09-07T22:54:27.432281Z",
   "system_state": "seasonal_transition_state",
   "scores": {
-    "L0": 0.3357,
-    "L2": 0.5779,
-    "L3": 0.328,
-    "L5": 0.3077,
-    "L6": 0.3039
+    "L0": 0.3555,
+    "L2": 0.6012,
+    "L3": 0.259,
+    "L5": 0.3184,
+    "L6": 0.3691
   },
   "macro_context": {
     "band": "high",
-    "score": 0.5779,
+    "score": 0.6012,
     "tags": []
   },
   "meso_organisation": {
@@ -18,19 +18,19 @@
     "note": "no meso-scale layer instrumented (regional convection / MCS)"
   },
   "micro_activation": {
-    "band": "high",
-    "score": 0.328,
+    "band": "medium",
+    "score": 0.259,
     "thunder_pts": 0,
-    "storms_EONET": 0
+    "storms_EONET": 6
   },
   "field_response": {
     "electric": {
       "band": "medium",
-      "score": 0.3077
+      "score": 0.3184
     },
     "resonance": {
       "band": "medium",
-      "score": 0.3039,
+      "score": 0.3691,
       "confirmation": "low_proxy_limited"
     }
   },
@@ -40,15 +40,15 @@
     "reason": "chain propagated to resonance"
   },
   "external_forcing_mask": {
-    "external_score": 0.336,
+    "external_score": 0.355,
     "externally_driven": true,
     "interpretation": "external forcing non-trivial -> check L0 contribution"
   },
   "validation_status": {
     "status": "validated_by_L9",
-    "validation_score": 1.0,
+    "validation_score": 0.9286,
     "evidence_level": "exploratory_signal",
-    "checks": "6/7 passed",
-    "l9_timestamp": "2026-09-07T18:49:16.463723Z"
+    "checks": "6/8 passed",
+    "l9_timestamp": "2026-09-07T22:54:33.749933Z"
   }
 }
