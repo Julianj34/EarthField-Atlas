@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-08T17:59:26.479114Z",
+  "timestamp": "2026-09-08T22:47:21.267820Z",
   "engine_version": "1.0",
   "layer": 9,
   "name": "External Grounding & Validation",
@@ -22,16 +22,15 @@
     "space_weather_validation": {
       "external_source": "NOAA SWPC",
       "checks": [
-        "V_kp_consistency",
-        "V_storm_flag"
+        "V_kp_consistency"
       ],
       "kp_validation_context": {
-        "model_kp_current_1m": 4.0,
+        "model_kp_current_1m": 3.0,
         "model_kp_max_60min": null,
-        "model_kp_used": 4.0,
+        "model_kp_used": 3.0,
         "model_kp_method": "unknown",
-        "noaa_kp_current": 4.0,
-        "noaa_kp_max_60min": 5.0,
+        "noaa_kp_current": 3.0,
+        "noaa_kp_max_60min": 3.0,
         "delta": 0.0,
         "window_used": "current_1m",
         "interpretation": "Kp-Werte konsistent innerhalb Toleranz (current_1m)",
@@ -79,43 +78,31 @@
       "confidence": 0.95,
       "external_source": "NOAA CPC ONI",
       "details": "NOAA ONI=+1.80°C → erwartet el_nino. Modell=el_nino (ONI=1.8).",
-      "timestamp": "2026-09-08T17:59:26.479114Z"
+      "timestamp": "2026-09-08T22:47:21.267820Z"
     },
     {
       "id": "V_kp_consistency",
       "module": "space_weather_validation",
       "goal": "Modell-Kp und NOAA-Kp im gleichen Zeitfenster konsistent",
       "expected": "|Δ Kp| <= 1.0  (Fenster: current_1m)",
-      "observed": "model_current=4.0  vs  noaa_current=4.0  →  |Δ|=0.00",
+      "observed": "model_current=3.0  vs  noaa_current=3.0  →  |Δ|=0.00",
       "status": "passed",
       "confidence": 0.9,
       "external_source": "NOAA SWPC",
       "details": "Kp-Werte konsistent innerhalb Toleranz (current_1m)",
-      "timestamp": "2026-09-08T17:59:26.479114Z"
-    },
-    {
-      "id": "V_storm_flag",
-      "module": "space_weather_validation",
-      "goal": "Bei Kp >= 5 ist geomagnetic_storm-Flag gesetzt",
-      "expected": true,
-      "observed": false,
-      "status": "failed",
-      "confidence": 0.95,
-      "external_source": "NOAA SWPC",
-      "details": "NOAA Kp=5.00 → Sturm. Modell-Flag=False",
-      "timestamp": "2026-09-08T17:59:26.479114Z"
+      "timestamp": "2026-09-08T22:47:21.267820Z"
     },
     {
       "id": "V_storm_atmosphere",
       "module": "storm_validation",
       "goal": "Bei >= 5 offenen Sturm-Events weltweit ist L3 >= 0.3",
       "expected": "L3 >= 0.3",
-      "observed": "L3 = 0.250",
+      "observed": "L3 = 0.279",
       "status": "uncertain",
       "confidence": 0.6,
       "external_source": "NASA EONET",
-      "details": "EONET open storms=5. L3=0.250, active_thunderstorms=False",
-      "timestamp": "2026-09-08T17:59:26.479114Z"
+      "details": "EONET open storms=5. L3=0.279, active_thunderstorms=True",
+      "timestamp": "2026-09-08T22:47:21.267820Z"
     },
     {
       "id": "V_schumann_data_availability",
@@ -127,7 +114,7 @@
       "confidence": 0.0,
       "external_source": "none",
       "details": "Layer 6 läuft als modelliert, nicht gemessen. Validierung blockiert.",
-      "timestamp": "2026-09-08T17:59:26.479114Z"
+      "timestamp": "2026-09-08T22:47:21.267820Z"
     },
     {
       "id": "V_consistency_tags",
@@ -138,20 +125,20 @@
       "status": "passed",
       "confidence": null,
       "external_source": "internal",
-      "details": "baseline_n=2, signal_n=7",
-      "timestamp": "2026-09-08T17:59:26.479114Z"
+      "details": "baseline_n=2, signal_n=6",
+      "timestamp": "2026-09-08T22:47:21.267820Z"
     },
     {
       "id": "V_consistency_seasonal",
       "module": "consistency_validation",
       "goal": "seasonal_transition_state: preparation > 0.45 und downstream < 0.35",
       "expected": "prep > 0.45 AND downstream < 0.35",
-      "observed": "prep=0.563, downstream=0.269",
-      "status": "passed",
+      "observed": "prep=0.615, downstream=0.354",
+      "status": "uncertain",
       "confidence": null,
       "external_source": "internal",
       "details": "Meta-Score-Konsistenz für seasonal_transition_state",
-      "timestamp": "2026-09-08T17:59:26.479114Z"
+      "timestamp": "2026-09-08T22:47:21.267820Z"
     },
     {
       "id": "V_backtest_carnegie_anomalous",
@@ -163,7 +150,7 @@
       "confidence": 0.85,
       "external_source": "internal",
       "details": "Carnegie-Tagesgang-Backtest aus History. n=6.",
-      "timestamp": "2026-09-08T17:59:26.479114Z"
+      "timestamp": "2026-09-08T22:47:21.267820Z"
     },
     {
       "id": "V_backtest_enso_consistency",
@@ -174,49 +161,46 @@
       "status": "passed",
       "confidence": 0.85,
       "external_source": "internal",
-      "details": "ONI=+1.80, warm_snaps=320/352",
-      "timestamp": "2026-09-08T17:59:26.479114Z"
+      "details": "ONI=+1.80, warm_snaps=321/353",
+      "timestamp": "2026-09-08T22:47:21.267820Z"
     }
   ],
   "aggregate": {
-    "n_total": 9,
-    "n_passed": 6,
-    "n_failed": 1,
-    "n_uncertain": 1,
+    "n_total": 8,
+    "n_passed": 5,
+    "n_failed": 0,
+    "n_uncertain": 2,
     "n_inconclusive": 1,
-    "validation_score": 0.8125,
+    "validation_score": 0.8571,
     "evidence_level": "exploratory_signal"
   },
-  "failed_checks": [
-    {
-      "id": "V_storm_flag",
-      "module": "space_weather_validation",
-      "goal": "Bei Kp >= 5 ist geomagnetic_storm-Flag gesetzt",
-      "expected": true,
-      "observed": false,
-      "status": "failed",
-      "confidence": 0.95,
-      "external_source": "NOAA SWPC",
-      "details": "NOAA Kp=5.00 → Sturm. Modell-Flag=False",
-      "timestamp": "2026-09-08T17:59:26.479114Z"
-    }
-  ],
+  "failed_checks": [],
   "uncertain_checks": [
     {
       "id": "V_storm_atmosphere",
       "module": "storm_validation",
       "goal": "Bei >= 5 offenen Sturm-Events weltweit ist L3 >= 0.3",
       "expected": "L3 >= 0.3",
-      "observed": "L3 = 0.250",
+      "observed": "L3 = 0.279",
       "status": "uncertain",
       "confidence": 0.6,
       "external_source": "NASA EONET",
-      "details": "EONET open storms=5. L3=0.250, active_thunderstorms=False",
-      "timestamp": "2026-09-08T17:59:26.479114Z"
+      "details": "EONET open storms=5. L3=0.279, active_thunderstorms=True",
+      "timestamp": "2026-09-08T22:47:21.267820Z"
+    },
+    {
+      "id": "V_consistency_seasonal",
+      "module": "consistency_validation",
+      "goal": "seasonal_transition_state: preparation > 0.45 und downstream < 0.35",
+      "expected": "prep > 0.45 AND downstream < 0.35",
+      "observed": "prep=0.615, downstream=0.354",
+      "status": "uncertain",
+      "confidence": null,
+      "external_source": "internal",
+      "details": "Meta-Score-Konsistenz für seasonal_transition_state",
+      "timestamp": "2026-09-08T22:47:21.267820Z"
     }
   ],
   "validated_hypotheses": [],
-  "model_adjustment_suggestions": [
-    "Layer 0/4: Kp-Refresh-Logik prüfen (V_storm_flag failed)"
-  ]
+  "model_adjustment_suggestions": []
 }

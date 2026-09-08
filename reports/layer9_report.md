@@ -1,22 +1,23 @@
 # Layer 9 — External Grounding & Validation
 
-**Run:** 2026-09-08T17:59:26.479114Z
-**Validation Score:** 0.8125  (exploratory_signal)
+**Run:** 2026-09-08T22:47:21.267820Z
+**Validation Score:** 0.8571  (exploratory_signal)
 
 ## Aggregat
-- ✅ Passed:       6
-- ❌ Failed:       1
-- ⚠️  Uncertain:  1
+- ✅ Passed:       5
+- ❌ Failed:       0
+- ⚠️  Uncertain:  2
 - ❓ Inconclusive: 1
 
 ## Failed Checks
-- **V_storm_flag** (space_weather_validation): NOAA Kp=5.00 → Sturm. Modell-Flag=False
+- keine
 
 ## Uncertain Checks
-- **V_storm_atmosphere** (storm_validation): EONET open storms=5. L3=0.250, active_thunderstorms=False
+- **V_storm_atmosphere** (storm_validation): EONET open storms=5. L3=0.279, active_thunderstorms=True
+- **V_consistency_seasonal** (consistency_validation): Meta-Score-Konsistenz für seasonal_transition_state
 
 ## Model Adjustment Suggestions
-- Layer 0/4: Kp-Refresh-Logik prüfen (V_storm_flag failed)
+- keine
 
 ## Validation Checks (alle)
 - ✅ **V_enso_phase**: Layer-2-ENSO-Klassifikation stimmt mit offiziellem NOAA ONI überein
@@ -24,22 +25,19 @@
   - Beobachtet: el_nino
 - ✅ **V_kp_consistency**: Modell-Kp und NOAA-Kp im gleichen Zeitfenster konsistent
   - Erwartet: |Δ Kp| <= 1.0  (Fenster: current_1m)
-  - Beobachtet: model_current=4.0  vs  noaa_current=4.0  →  |Δ|=0.00
-- ❌ **V_storm_flag**: Bei Kp >= 5 ist geomagnetic_storm-Flag gesetzt
-  - Erwartet: True
-  - Beobachtet: False
+  - Beobachtet: model_current=3.0  vs  noaa_current=3.0  →  |Δ|=0.00
 - ⚠️ **V_storm_atmosphere**: Bei >= 5 offenen Sturm-Events weltweit ist L3 >= 0.3
   - Erwartet: L3 >= 0.3
-  - Beobachtet: L3 = 0.250
+  - Beobachtet: L3 = 0.279
 - ❓ **V_schumann_data_availability**: Externe Schumann-Resonanz-Messdaten für Vergleich verfügbar
   - Erwartet: real-time SR1 amplitude/frequency feed
   - Beobachtet: no public feed available
 - ✅ **V_consistency_tags**: Baseline-Tags und Signal-Tags sind disjunkt
   - Erwartet: no overlap
   - Beobachtet: overlap = []
-- ✅ **V_consistency_seasonal**: seasonal_transition_state: preparation > 0.45 und downstream < 0.35
+- ⚠️ **V_consistency_seasonal**: seasonal_transition_state: preparation > 0.45 und downstream < 0.35
   - Erwartet: prep > 0.45 AND downstream < 0.35
-  - Beobachtet: prep=0.563, downstream=0.269
+  - Beobachtet: prep=0.615, downstream=0.354
 - ✅ **V_backtest_carnegie_anomalous**: anomalous_resonance_state tritt überwiegend (>= 80%) abends auf
   - Erwartet: >= 80% evening
   - Beobachtet: 100.0% evening (6/6)
